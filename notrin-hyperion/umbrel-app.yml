@@ -1,0 +1,25 @@
+manifestVersion: 1
+id: notrin-hyperion
+name: Hyperion
+tagline: Run Hyperion to visualize and control your lighting system.
+icon: https://i.ibb.co/sHkpTy3/app-icon-umbrel-os.jpg
+category: Tools
+version: "1.0.1"
+port: 8090
+description: >-
+  Hyperion is a lightweight, customizable ambient lighting software that works with various devices.
+
+developer: Hyperion Project
+website: https://www.hyperion-project.org
+submitter: NotRin7
+submission:
+  repo: https://github.com/hyperion-project/hyperion.ng
+support: "https://github.com/foorschtbar/hyperion-docker/issues"
+gallery:
+  - https://i.ibb.co/WF1XWB9/logo-dark.png
+releaseNotes: >
+  - Icon fix
+dependencies: []
+path: ""
+defaultUsername: ""
+defaultPassword: ""

@@ -1,0 +1,28 @@
+manifestVersion: 1.1
+id: notrin-litecoin-electrumx
+category: Litecoin
+name: ElectrumX LTC
+icon: https://i.ibb.co/qW8YNFL/litecoin-electrumx.png
+version: "1.1.0"
+tagline: A lightweight Electrum server for Litecoin
+description: >
+  (⚠️WIP⚠️)
+
+  Run your personal Electrum server and connect your Electrum-compatible
+  
+  wallet instead of using a third-party
+
+  Electrum server.
+developer: NotRin7
+dependencies:
+  - notrin-litecoin
+repo: https://github.com/NotRin7/umbrel-community-app-store
+support: https://github.com/NotRin7/umbrel-community-app-store/issues
+port: 2999
+gallery:
+  - https://i.ibb.co/Fwf4KB1/Screenshot-2025-01-12-162846.png
+path: ""
+defaultPassword: ""
+releaseNotes: >
+  - GUI now available.
+submitter: NotRin7

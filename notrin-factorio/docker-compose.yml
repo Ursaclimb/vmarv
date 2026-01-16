@@ -1,0 +1,20 @@
+version: "3"
+services:
+  app_proxy:
+    environment:
+      APP_HOST: factorio-server-manager
+      APP_PORT: 80
+
+  factorio-server-manager:
+    image: "ofsm/ofsm:latest"
+    container_name: "factorio-server-manager"
+    restart: "unless-stopped"
+    environment:
+      - "FACTORIO_VERSION=2.0.30"
+      - "RCON_PASS"
+    volumes:
+      - "${APP_DATA_DIR}/fsm-data:/opt/fsm-data"
+      - "${APP_DATA_DIR}/factorio-data/saves:/opt/factorio/saves"
+      - "${APP_DATA_DIR}/factorio-data/mods:/opt/factorio/mods"
+      - "${APP_DATA_DIR}/factorio-data/config:/opt/factorio/config"
+      - "${APP_DATA_DIR}/factorio-data/mod_packs:/opt/fsm/mod_packs"

@@ -1,0 +1,14 @@
+version: '3.7'
+
+services:
+  app_proxy:
+    environment:
+      APP_HOST: hyperion
+      APP_PORT: 8090
+
+  hyperion:
+    image: foorschtbar/hyperion
+    container_name: hyperion
+    volumes:
+      - ${APP_DATA_DIR}/config/:/root/.hyperion
+    restart: unless-stopped

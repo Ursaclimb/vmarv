@@ -1,0 +1,46 @@
+manifestVersion: 1
+id: notrin-litecoin
+name: Litecoin Node
+tagline: Run a Litecoin node to validate transactions.
+icon: https://i.ibb.co/M22sWmM/proxy-image-4.jpg
+category: Litecoin
+version: "1.4.0"
+port: 10102
+description: >-
+  ⚠️If not working, update the IP address in the Docker Compose file,
+
+  located at /home/umbrel/umbrel/app-data/notrin-litecoin/docker-compose.yml,
+
+  by replacing ip_of_umbrel_server with the actual IP address of your Umbrel server.
+
+  After making this change, you will need to restart the Litecoin node for the changes to take effect.
+
+
+
+
+  Run your Litecoin node to independently store and validate every Litecoin transaction with an easy-to-use graphical interface. 
+
+  The litecoin.conf file is located at:
+
+  /home/umbrel/umbrel/app-data/notrin-litecoin/data
+
+developer: NotRin7
+website: https://litecoin.org
+submitter: NotRin7
+submission:
+repo: https://github.com/litecoin-project/docker-litecoin-core
+support: "https://github.com/NotRin7/umbrel-community-app-store/issues"
+gallery:
+  - https://i.ibb.co/T4FL3pQ/Screenshot-2025-01-08-185725.png
+releaseNotes: >
+  - All app images are now built locally instead of being pulled from Docker Hub.
+  - Fixed a networking bug that caused the GUI to be unreachable.
+  - GUI 1.3.0 is now available.
+  - Updated user interface for a more modern look.
+  - Displays the last 100 blocks' transactions.
+  
+  - Added auto-refresh functionality.
+dependencies: []
+path: ""
+defaultUsername: "testuser"
+defaultPassword: "testpass"
