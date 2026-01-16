@@ -25,11 +25,12 @@ services:
     environment:
       - RPC_IP=${LITECOIN_NODE_IP}
       - RPC_PORT=${LITECOIN_RPC_PORT}
+
   litecoin_node_dashboard:
     image: marvind2/notrin-litecoin-gui:latest
     container_name: litecoin_node_dashboard
     restart: always
     environment:
-      - API_IP=${LITECOIN_LOCALHOST_IP} #ip_of_umbrel_server can be change here, recomnedet to change in exports.sh (can look like th
-is API_IP=192.168.1.2)                                                                                                                   depends_on:
+      - API_IP=${LITECOIN_LOCALHOST_IP}
+    depends_on:
       - litecoin_node_rpc_flesk
