@@ -7,7 +7,7 @@ services:
       APP_PORT: 80
 
   litecoin:
-    build: ./litecoin-core-build
+    image: marvind2/litecoin-core:0.21.4
     container_name: litecoin
     restart: always
     ports:
@@ -17,7 +17,7 @@ services:
       - ${APP_DATA_DIR}/data:/home/litecoin/.litecoin
 
   litecoin_node_rpc_flesk:
-    build: ./api
+    image: marvind2/notrin-litecoin-api:latest
     container_name: litecoin_node_rpc_flesk
     restart: always
     ports:
@@ -26,10 +26,10 @@ services:
       - RPC_IP=${LITECOIN_NODE_IP}
       - RPC_PORT=${LITECOIN_RPC_PORT}
   litecoin_node_dashboard:
-    build: ./gui
+    image: marvind2/notrin-litecoin-gui:latest
     container_name: litecoin_node_dashboard
     restart: always
     environment:
-      - API_IP=${LITECOIN_LOCALHOST_IP} #ip_of_umbrel_server can be change here, recomnedet to change in exports.sh (can look like this API_IP=192.168.1.2)
-    depends_on:
+      - API_IP=${LITECOIN_LOCALHOST_IP} #ip_of_umbrel_server can be change here, recomnedet to change in exports.sh (can look like th
+is API_IP=192.168.1.2)                                                                                                                   depends_on:
       - litecoin_node_rpc_flesk
