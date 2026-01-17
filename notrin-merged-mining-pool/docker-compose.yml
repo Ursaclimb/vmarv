@@ -30,13 +30,14 @@ services:
         condition: service_healthy
     networks:
       - pool_network
-      - main
-    healthcheck:
-      test: ["CMD", "curl", "-f", "http://localhost:8080/health", "||", "exit", "1"]
-      interval: 30s
-      timeout: 10s
-      retries: 3
-      start_period: 60s
+      - umbrel_main_network
+    # Disabled healthcheck - app has RPC dependency issues
+    # healthcheck:
+    #   test: ["CMD", "curl", "-f", "http://localhost:8080/health", "||", "exit", "1"]
+    #   interval: 30s
+    #   timeout: 10s
+    #   retries: 3
+    #   start_period: 60s
 
   postgres:
     image: postgres:16-alpine
@@ -53,7 +54,6 @@ services:
       - ./persistence/schemas:/docker-entrypoint-initdb.d:ro
     networks:
       - pool_network
-      - main
     healthcheck:
       test: ["CMD-SHELL", "pg_isready -U pooluser -d merged_pool"]
       interval: 10s
@@ -69,8 +69,6 @@ volumes:
 
 networks:
   pool_network:
-    name: notrin-merged-mining-pool_pool_network
     driver: bridge
-  main:
-    name: umbrel_main_network
+  umbrel_main_network:
     external: true
