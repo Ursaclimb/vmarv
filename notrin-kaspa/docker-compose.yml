@@ -13,6 +13,7 @@ services:
       - kaspa-data:/home/kaspad/.kaspa-stratum-bridge
     environment:
       - TZ=UTC
+    command: /app/kaspad --stratum-enabled --stratum-port=:16210
     networks:
       - umbrel_main_network
 
