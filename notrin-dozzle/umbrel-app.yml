@@ -1,0 +1,37 @@
+manifestVersion: 1
+id: notrin-dozzle
+name: Dozzle - Global Log Viewer
+tagline: Real-time log viewer for all Docker containers.
+icon: https://raw.githubusercontent.com/amir20/dozzle/master/logo/logo.svg
+category: Utilities
+version: "1.0.0"
+port: 8080
+description: >-
+  Dozzle is a simple, web-based interface for monitoring Docker container logs in real-time.
+  
+  This global instance can view logs from ALL containers running on your Umbrel,
+  including Kaspa, Litecoin, and any other apps.
+  
+  Features:
+  - Real-time log streaming from all containers
+  - Search and filter capabilities
+  - Container management and inspection
+  - Clean, responsive web interface
+  
+  Access at: http://your-umbrel-ip:8080
+
+developer: Amir Keshavarz
+website: https://dozzle.dev
+submitter: vmarv
+submission: https://github.com/Ursaclimb/vmarv
+repo: https://github.com/amir20/dozzle
+support: "https://github.com/amir20/dozzle/issues"
+gallery:
+  - https://raw.githubusercontent.com/amir20/dozzle/master/screenshots/preview.png
+releaseNotes: >
+  - Initial release with global container log viewing
+  - Real-time streaming and filtering
+  - Supports all Umbrel apps and services
+
+dependencies: []
+path: ""
