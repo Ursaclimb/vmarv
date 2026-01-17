@@ -13,9 +13,9 @@
         "litecoin": [
             {
                 "name": "primary",
-                "rpc_url": "http://litecoin:19332",
-                "rpc_username": "gossimerlite",
-                "rpc_password": "red2305",
+                "rpc_url": "http://litecoin:9332",
+                "rpc_username": "testuser",
+                "rpc_password": "testpass",
                 "block_notify_url": "tcp://litecoin:5000",
                 "timeout": "10s",
                 "reward_to": "LVuwPeA4bj8t37vkwtPrWjVusQTRf1t22A"
