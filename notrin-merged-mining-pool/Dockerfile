@@ -27,8 +27,8 @@ RUN apk add --no-cache ca-certificates curl postgresql-client
 # Copy binary from builder
 COPY --from=builder /build/merged-mining-pool /app/merged-mining-pool
 
-# Copy config example (optional)
-COPY config.example.json /app/config.json
+# Copy default config (no JSON comments allowed)
+COPY config.default.json /app/config.json
 COPY README.md /app/README.md
 
 # Expose default ports
