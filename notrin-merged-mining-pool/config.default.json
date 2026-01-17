@@ -1,0 +1,78 @@
+{
+    "pool_name": "Umbrel Merged Mining Pool",
+    "port": "3333",
+    "max_connections": 1000,
+    "connection_timeout": "60s",
+    "pool_difficulty": 100,
+    "block_signature": "UmbrelMiningPool",
+    "merged_blockchain_order": [
+        "litecoin",
+        "dogecoin"
+    ],
+    "blockchains": {
+        "litecoin": [
+            {
+                "name": "primary",
+                "rpc_url": "http://litecoin:19332",
+                "rpc_username": "gossimerlite",
+                "rpc_password": "red2305",
+                "block_notify_url": "tcp://litecoin:5000",
+                "timeout": "10s",
+                "reward_to": "LVuwPeA4bj8t37vkwtPrWjVusQTRf1t22A"
+            }
+        ],
+        "dogecoin": [
+            {
+                "name": "primary",
+                "rpc_url": "http://retro-mike-doge-node_node_1:9003",
+                "rpc_username": "dogecoin",
+                "rpc_password": "dogecoin",
+                "block_notify_url": "tcp://retro-mike-doge-node_node_1:5001",
+                "timeout": "10s",
+                "reward_to": "D5t4FBhSmh4xRMBKpRBCuQG87q9hmoNnqY"
+            }
+        ]
+    },
+    "share_flush_interval": "5s",
+    "hashrate_window": "10m",
+    "pool_stats_interval": "2m",
+    "persistence": {
+        "host": "postgres",
+        "port": 5432,
+        "user": "pooluser",
+        "password": "poolpassword",
+        "database": "merged_pool",
+        "sslmode": "disable"
+    },
+    "payouts": {
+        "interval": "10m",
+        "scheme": "PPLNS",
+        "chains": {
+            "litecoin": {
+                "reward_from": "LVuwPeA4bj8t37vkwtPrWjVusQTRf1t22A",
+                "pool_rewards": [
+                    {
+                        "address": "LVuwPeA4bj8t37vkwtPrWjVusQTRf1t22A",
+                        "percentage": 0.01
+                    }
+                ],
+                "miner_min_payment": 0.25
+            },
+            "dogecoin": {
+                "reward_from": "D5t4FBhSmh4xRMBKpRBCuQG87q9hmoNnqY",
+                "pool_rewards": [
+                    {
+                        "address": "D5t4FBhSmh4xRMBKpRBCuQG87q9hmoNnqY",
+                        "percentage": 0.01
+                    }
+                ],
+                "miner_min_payment": 10000
+            }
+        }
+    },
+    "api": {
+        "host": "0.0.0.0",
+        "port": "8080"
+    },
+    "app_stats_interval": "1m"
+}
