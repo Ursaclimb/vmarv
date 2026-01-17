@@ -2,7 +2,7 @@ version: '3.7'
 
 services:
   kaspad:
-    image: kaspad:latest
+    image: marvind2/kaspad:latest
     container_name: kaspad-bridge
     restart: unless-stopped
     ports:
