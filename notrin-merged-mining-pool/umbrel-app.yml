@@ -52,6 +52,11 @@ releaseNotes: >-
 dependencies: []
 path: ""
 
+app_proxy:
+  merged-mining-pool:
+    http: 8080
+    ws: false
+
 containers:
   merged-mining-pool:
     image: marvind2/merged-mining-pool:latest

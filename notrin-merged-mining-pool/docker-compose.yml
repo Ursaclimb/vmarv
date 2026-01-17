@@ -1,5 +1,3 @@
-version: '3.8'
-
 services:
   merged-mining-pool:
     image: marvind2/merged-mining-pool:latest
@@ -51,8 +49,6 @@ services:
       POSTGRES_DB: merged_pool
       POSTGRES_USER: pooluser
       POSTGRES_PASSWORD: poolpassword
-    ports:
-      - "5432:5432"
     volumes:
       # Persist database
       - postgres_data:/var/lib/postgresql/data
