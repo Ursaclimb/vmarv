@@ -1,0 +1,25 @@
+version: '3.7'
+
+services:
+  kaspad:
+    image: kaspad:latest
+    container_name: kaspad-bridge
+    restart: unless-stopped
+    ports:
+      - "16110:16110"  # GRPC
+      - "16111:16111"  # P2P
+      - "16210:16210"  # Stratum Mining
+    volumes:
+      - kaspa-data:/home/kaspad/.kaspa-stratum-bridge
+    environment:
+      - TZ=UTC
+    networks:
+      - umbrel_main_network
+
+volumes:
+  kaspa-data:
+    driver: local
+
+networks:
+  umbrel_main_network:
+    external: true

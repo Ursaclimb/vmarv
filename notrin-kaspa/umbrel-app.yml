@@ -1,0 +1,36 @@
+manifestVersion: 1
+id: notrin-kaspa
+name: Kaspa Stratum Bridge
+tagline: Run a Kaspa node with embedded stratum bridge for mining.
+icon: https://raw.githubusercontent.com/kaspanet/kaspad/master/logo/kaspa.png
+category: Cryptocurrency
+version: "1.0.0"
+port: 16210
+description: >-
+  Run a Kaspa blockchain node with an embedded stratum bridge for cryptocurrency mining.
+  
+  The stratum bridge allows miners to connect on port 16210 and submit shares.
+  
+  Node peers connect on port 16111 (P2P).
+  GRPC API available on port 16110.
+  
+  Blockchain data is persisted in the kaspa-data volume.
+  
+  This app uses the BridgeDirect branch from LiveLaughLove13's fork of rusty-kaspa,
+  which includes an embedded stratum mining bridge directly in the kaspad binary.
+
+developer: Kaspa Community
+website: https://kaspa.org
+submitter: vmarv
+submission: https://github.com/Ursaclimb/vmarv
+repo: https://github.com/LiveLaughLove13/rusty-kaspa
+support: "https://github.com/Ursaclimb/vmarv/issues"
+gallery:
+  - https://raw.githubusercontent.com/kaspanet/kaspad/master/logo/kaspa.png
+releaseNotes: >
+  - Initial release with BridgeDirect stratum bridge
+  - Kaspad syncs blockchain and serves stratum miners
+  - Ports: 16110 (GRPC), 16111 (P2P), 16210 (Stratum)
+
+dependencies: []
+path: ""
