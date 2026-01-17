@@ -30,6 +30,7 @@ services:
         condition: service_healthy
     networks:
       - pool_network
+      - main
     healthcheck:
       test: ["CMD", "curl", "-f", "http://localhost:8080/health", "||", "exit", "1"]
       interval: 30s
@@ -52,6 +53,7 @@ services:
       - ./persistence/schemas:/docker-entrypoint-initdb.d:ro
     networks:
       - pool_network
+      - main
     healthcheck:
       test: ["CMD-SHELL", "pg_isready -U pooluser -d merged_pool"]
       interval: 10s
@@ -67,4 +69,8 @@ volumes:
 
 networks:
   pool_network:
+    name: notrin-merged-mining-pool_pool_network
     driver: bridge
+  main:
+    name: umbrel_main_network
+    external: true
