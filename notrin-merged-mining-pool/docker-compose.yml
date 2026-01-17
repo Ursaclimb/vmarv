@@ -16,8 +16,6 @@ services:
       # DB_PASSWORD: poolpassword
       # DB_NAME: merged_pool
     ports:
-      # API Server
-      - "8080:8080"
       # Stratum ports (primary coin - typically Litecoin)
       - "3333:3333"
       # Stratum ports (auxiliary coin - typically Dogecoin)
