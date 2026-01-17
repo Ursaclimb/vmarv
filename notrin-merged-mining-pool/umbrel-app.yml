@@ -1,0 +1,59 @@
+manifestVersion: 1
+id: notrin-merged-mining-pool
+name: Merged Mining Pool
+tagline: High-performance Merged Mining Pool for Litecoin + Dogecoin
+icon: https://raw.githubusercontent.com/dreams-money/merged-mining-pool/main/docs/logo.png
+category: Cryptocurrency
+version: "1.0.0"
+port: 8080
+description: >-
+  A high-performance merged mining pool software supporting concurrent mining of multiple coins.
+  
+  This pool implementation is centered around Dogecoin/Litecoin merged mining but supports
+  any coin that can be merged mined together.
+  
+  Features:
+  - Stratum networking with support for 1000+ concurrent clients
+  - ZMQ subscriptions for real-time blockchain communication
+  - Unique extranonce generation for parallel client workload
+  - Efficient merged mining support
+  - RESTful API service for frontend integration
+  - RPC failover for high availability
+  - Multiple payout schemes for miner rewards
+  - Single coin mining support for testing
+  
+  Port Configuration:
+  - 8080: API Server
+  - 3333: Primary stratum protocol (Litecoin)
+  - 3334: Auxiliary stratum protocol (Dogecoin)
+  - 3335: Additional stratum port
+  
+  Database:
+  - PostgreSQL 16 for data persistence
+  
+  Prerequisites:
+  - Blockchain RPC endpoints (Litecoin, Dogecoin, etc.)
+  - ZMQ block notification from nodes configured with: -zmqpubhashblock=tcp://0.0.0.0:port
+  - PostgreSQL initialized with pool schemas from persistence/schemas directory
+
+developer: Designs Capital
+website: https://github.com/dreams-money/merged-mining-pool
+submitter: vMarv
+submission: https://github.com/Ursaclimb/vmarv
+repo: https://github.com/dreams-money/merged-mining-pool
+support: https://github.com/dreams-money/merged-mining-pool/discussions
+gallery:
+  - https://raw.githubusercontent.com/dreams-money/merged-mining-pool/main/docs/screenshot.png
+releaseNotes: >-
+  Initial Umbrel app release with full merged mining pool support.
+  Includes PostgreSQL database, API server, and stratum mining protocol.
+  Tested for production use with 1000+ concurrent mining clients.
+
+dependencies: []
+path: ""
+
+containers:
+  merged-mining-pool:
+    image: marvind2/merged-mining-pool:latest
+  postgres:
+    image: postgres:16-alpine

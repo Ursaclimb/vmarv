@@ -1,0 +1,78 @@
+version: '3.8'
+
+services:
+  merged-mining-pool:
+    image: marvind2/merged-mining-pool:latest
+    # For local builds only, uncomment below:
+    # build:
+    #   context: .
+    #   dockerfile: Dockerfile
+    container_name: merged-mining-pool
+    restart: unless-stopped
+    environment:
+      TZ: UTC
+      # These should be configured via environment variables or config file
+      # DB_HOST: postgres
+      # DB_PORT: 5432
+      # DB_USER: pooluser
+      # DB_PASSWORD: poolpassword
+      # DB_NAME: merged_pool
+    ports:
+      # API Server
+      - "8080:8080"
+      # Stratum ports (primary coin - typically Litecoin)
+      - "3333:3333"
+      # Stratum ports (auxiliary coin - typically Dogecoin)
+      - "3334:3334"
+      # Additional stratum port
+      - "3335:3335"
+    volumes:
+      # Persist pool data
+      - pool_data:/app/data
+      # Mount config file (optional)
+      - ./config.json:/app/config.json:ro
+    depends_on:
+      postgres:
+        condition: service_healthy
+    networks:
+      - pool_network
+    healthcheck:
+      test: ["CMD", "curl", "-f", "http://localhost:8080/health", "||", "exit", "1"]
+      interval: 30s
+      timeout: 10s
+      retries: 3
+      start_period: 60s
+
+  postgres:
+    image: postgres:16-alpine
+    container_name: merged-pool-postgres
+    restart: unless-stopped
+    environment:
+      POSTGRES_DB: merged_pool
+      POSTGRES_USER: pooluser
+      POSTGRES_PASSWORD: poolpassword
+    ports:
+      - "5432:5432"
+    volumes:
+      # Persist database
+      - postgres_data:/var/lib/postgresql/data
+      # Mount initialization scripts (optional)
+      - ./persistence/schemas:/docker-entrypoint-initdb.d:ro
+    networks:
+      - pool_network
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U pooluser -d merged_pool"]
+      interval: 10s
+      timeout: 5s
+      retries: 5
+      start_period: 30s
+
+volumes:
+  pool_data:
+    driver: local
+  postgres_data:
+    driver: local
+
+networks:
+  pool_network:
+    driver: bridge
