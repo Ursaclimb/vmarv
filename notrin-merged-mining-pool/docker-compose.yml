@@ -74,5 +74,3 @@ networks:
     driver: bridge
   umbrel_main_network:
     external: true
-  umbrel_main_network:
-    external: true
