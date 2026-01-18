@@ -3,7 +3,7 @@
     "port": "3333",
     "max_connections": 1000,
     "connection_timeout": "60s",
-    "pool_difficulty": 100,
+    "pool_difficulty": 1000,
     "block_signature": "UmbrelMiningPool",
     "merged_blockchain_order": [
         "litecoin",
