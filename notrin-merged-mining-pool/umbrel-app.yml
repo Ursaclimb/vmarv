@@ -54,7 +54,7 @@ path: ""
 
 app_proxy:
   merged-mining-pool:
-    http: 8080
+    http: 8081
     ws: false
 
 containers:
