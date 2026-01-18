@@ -5,7 +5,7 @@ tagline: High-performance Merged Mining Pool for Litecoin + Dogecoin
 icon: https://raw.githubusercontent.com/dreams-money/merged-mining-pool/main/docs/logo.png
 category: Cryptocurrency
 version: "1.0.0"
-port: 8080
+port: 8081
 description: >-
   A high-performance merged mining pool software supporting concurrent mining of multiple coins.
   
@@ -23,7 +23,7 @@ description: >-
   - Single coin mining support for testing
   
   Port Configuration:
-  - 8080: API Server
+  - 8081: API Server
   - 3333: Primary stratum protocol (Litecoin)
   - 3334: Auxiliary stratum protocol (Dogecoin)
   - 3335: Additional stratum port
@@ -59,6 +59,6 @@ app_proxy:
 
 containers:
   merged-mining-pool:
-    image: marvind2/merged-mining-pool:latest
+    image: vmarv/merged-mining-pool:latest
   postgres:
     image: postgres:16-alpine
