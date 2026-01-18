@@ -22,6 +22,8 @@ services:
       - "3334:3334"
       # Additional stratum port
       - "3335:3335"
+      # API endpoint for pool statistics
+      - "8080:8080"
     volumes:
       # Persist pool data
       - pool_data:/app/data
