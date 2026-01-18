@@ -17,6 +17,6 @@ apps:
     name: Merged Mining Pool
     category: cryptocurrency
 
-  - id: retro-mike-doge-node
+  - id: notrin-dogecoin
     name: Dogecoin Node
     category: cryptocurrency
