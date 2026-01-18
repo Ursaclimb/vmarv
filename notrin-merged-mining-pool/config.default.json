@@ -24,10 +24,10 @@
         "dogecoin": [
             {
                 "name": "primary",
-                "rpc_url": "http://retro-mike-doge-node_node_1:9003",
+                "rpc_url": "http://notrin-dogecoin_node_1:9003",
                 "rpc_username": "pooluser",
                 "rpc_password": "poolpassword",
-                "block_notify_url": "tcp://retro-mike-doge-node_node_1:7003",
+                "block_notify_url": "tcp://notrin-dogecoin_node_1:7003",
                 "timeout": "10s",
                 "reward_to": "D5t4FBhSmh4xRMBKpRBCuQG87q9hmoNnqY"
             }
