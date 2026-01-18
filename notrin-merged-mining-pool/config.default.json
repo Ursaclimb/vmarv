@@ -25,8 +25,8 @@
             {
                 "name": "primary",
                 "rpc_url": "http://retro-mike-doge-node_node_1:9003",
-                "rpc_username": "dogecoin",
-                "rpc_password": "dogecoin",
+                "rpc_username": "pooluser",
+                "rpc_password": "poolpassword",
                 "block_notify_url": "tcp://retro-mike-doge-node_node_1:5001",
                 "timeout": "10s",
                 "reward_to": "D5t4FBhSmh4xRMBKpRBCuQG87q9hmoNnqY"
