@@ -13,8 +13,10 @@ services:
     ports:
       - "${LITECOIN_RPC_PORT}:${LITECOIN_RPC_PORT}"
       - "${LITECOIN_P2P_PORT}:${LITECOIN_P2P_PORT}"
+      - "5555:5555"
     volumes:
       - ${APP_DATA_DIR}/data:/home/litecoin/.litecoin
+    command: litecoind -zmqpubhashblock="tcp://0.0.0.0:5555"
 
   litecoin_node_rpc_flesk:
     image: marvind2/notrin-litecoin-api:latest
