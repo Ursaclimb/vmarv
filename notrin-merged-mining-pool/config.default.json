@@ -16,7 +16,7 @@
                 "rpc_url": "http://litecoin:9332",
                 "rpc_username": "testuser",
                 "rpc_password": "testpass",
-                "block_notify_url": "tcp://litecoin:5000",
+                "block_notify_url": "tcp://127.0.0.1:5555",
                 "timeout": "10s",
                 "reward_to": "LVuwPeA4bj8t37vkwtPrWjVusQTRf1t22A"
             }
@@ -27,7 +27,7 @@
                 "rpc_url": "http://retro-mike-doge-node_node_1:9003",
                 "rpc_username": "pooluser",
                 "rpc_password": "poolpassword",
-                "block_notify_url": "tcp://retro-mike-doge-node_node_1:5001",
+                "block_notify_url": "tcp://retro-mike-doge-node_node_1:7003",
                 "timeout": "10s",
                 "reward_to": "D5t4FBhSmh4xRMBKpRBCuQG87q9hmoNnqY"
             }
