@@ -1,2 +1,22 @@
 id: "notrin" # Choose the ID for your app store. This should contain only alphabets ("a to z") and dashes ("-").
 name: "NotRin7's App Store" # Choose the name of your app store. It will show up in the UI as "<name> App Store".
+
+categories:
+  - cryptocurrency
+
+apps:
+  - id: notrin-kaspa
+    name: Kaspa Node
+    category: cryptocurrency
+    
+  - id: notrin-litecoin
+    name: Litecoin Node
+    category: cryptocurrency
+
+  - id: notrin-merged-mining-pool
+    name: Merged Mining Pool
+    category: cryptocurrency
+
+  - id: retro-mike-doge-node
+    name: Dogecoin Node
+    category: cryptocurrency
