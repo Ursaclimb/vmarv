@@ -25,6 +25,8 @@ services:
       # API endpoint for pool statistics
       - "8081:8080"
     volumes:
+      # Mount configuration file
+      - ./config.default.json:/etc/merged-mining-pool/config.json:ro
       # Persist pool data
       - pool_data:/app/data
     depends_on:
